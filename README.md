@@ -4,11 +4,12 @@ This is a simple exploration of the [MOZ Links API](https://moz.com/help/links-a
 
 ## Setup
 
-<p style="float: left;"><img alt="MOZ Roger Robot" src="moz-roger-robot.jpg"
-width="150vw" style="padding: 7px 10px 2px 0; float: left; height: auto">This
-is the first in a series of Jupyter Notebooks using MOZ resources. It should
-work on any Notebook hosting platform such as Google Colab or Azure Notebook.
-However, we will soon be doing browser automation which will require a local <a
+<p style="float: left;"><img alt="MOZ Roger Robot"
+src="assets/moz-roger-robot.jpg" width="150vw" style="padding: 7px 10px 2px 0;
+float: left; height: auto">This is the first in a series of Jupyter Notebooks
+using MOZ resources. It should work on any Notebook hosting platform such as
+Google Colab or Azure Notebook. However, we will soon be doing browser
+automation which will require a local <a
 href="https://mikelev.in/drinkme">Linux-based environment</a>.<a>
 
 ## Usage
