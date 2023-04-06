@@ -1,6 +1,7 @@
-mozcreds.txt
 .ipynb_checkpoints/
 __pycache__/
+assets/*
 *.db
 *.pkl
+*.txt
 *.json
