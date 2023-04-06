@@ -1,7 +1,11 @@
+*.csv
+*.db
+*.json
+*.pkl
+.github/
 .ipynb_checkpoints/
 __pycache__/
-*.db
-*.pkl
-*.txt
-*.csv
-*.json
+_proc/
+linksapi.txt
+mozcreds.txt
+quarto-linux-amd64.deb

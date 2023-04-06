@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+settings.ini
+setup.py
+moz/__init__.py
+moz/_modidx.py
+moz/core.py
+moz.egg-info/PKG-INFO
+moz.egg-info/SOURCES.txt
+moz.egg-info/dependency_links.txt
+moz.egg-info/entry_points.txt
+moz.egg-info/not-zip-safe
+moz.egg-info/requires.txt
+moz.egg-info/top_level.txt

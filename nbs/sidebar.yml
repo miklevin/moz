@@ -1,0 +1,9 @@
+website:
+  sidebar:
+    contents:
+      - index.ipynb
+      - 00_core.ipynb
+      - 00_introduction.ipynb
+      - 10_links_api.ipynb
+      - 20_chrome_automation.ipynb
+      - clean_nbs.ipynb

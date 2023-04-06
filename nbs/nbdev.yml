@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "moz"
+  site-url: "https://miklevin.github.io/moz"
+  description: "Starting my work with MOZ Links API"
+  repo-branch: main
+  repo-url: "https://github.com/miklevin/moz"
