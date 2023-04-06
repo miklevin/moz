@@ -6,6 +6,17 @@ import asyncio
 from playwright.async_api import Playwright, async_playwright
 
 
+pause_to_record = False
+# pause_to_record = True
+
+slow_mo = 50
+moz_creds = "assets/mozcreds.txt"
+chrome_exe = "/usr/bin/google-chrome"
+downloads_path = "/home/ubuntu/Downloads"
+user_data = "/home/ubuntu/.config/google-chrome/"
+# user_data = "session"
+
+
 def in_notebook():
     """Return True if run from a Jupyter Notebook and False if not."""
     try:
@@ -21,24 +32,17 @@ def in_notebook():
 
 if in_notebook():
     keyword = "Foo"  # or set to any default value that you prefer
+    headless = False
 else:
     import argparse
 
+    headless = True
     parser = argparse.ArgumentParser(description="Example script")
-    parser.add_argument("-k", "--keyword", type=str, required=True, help="Value for keyword")
+    parser.add_argument(
+        "-k", "--keyword", type=str, required=True, help="Value for keyword"
+    )
     args = parser.parse_args()
     keyword = args.keyword
-
-pause_to_record = False
-# pause_to_record = True
-
-slow_mo = 50
-headless = False
-moz_creds = "assets/mozcreds.txt"
-chrome_exe = "/usr/bin/google-chrome"
-downloads_path = "/home/ubuntu/Downloads"
-user_data = "/home/ubuntu/.config/google-chrome/"
-# user_data = "session"
 
 with open(moz_creds) as fh:
     UN, PW = [x.strip().split(" ")[1] for x in fh.readlines()]
@@ -47,7 +51,7 @@ with open(moz_creds) as fh:
 async def main():
     async with async_playwright() as playwright:
         context = await playwright.chromium.launch_persistent_context(
-            viewport={"width": 1200, "height": 1100},
+            viewport={"width": 1200, "height": 800},
             downloads_path=downloads_path,
             executable_path=chrome_exe,
             user_data_dir=user_data,
