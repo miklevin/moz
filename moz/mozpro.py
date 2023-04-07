@@ -4,7 +4,7 @@
 __all__ = ['pause_to_record', 'slow_mo', 'moz_creds', 'chrome_exe', 'downloads_path', 'user_data', 'in_notebook', 'main',
            'run_main']
 
-# %% ../nbs/20_chrome_automation.ipynb 4
+# %% ../nbs/20_chrome_automation.ipynb 3
 import nest_asyncio
 
 nest_asyncio.apply()
@@ -58,7 +58,7 @@ with open(moz_creds) as fh:
 async def main():
     async with async_playwright() as playwright:
         context = await playwright.chromium.launch_persistent_context(
-            viewport={"width": 1200, "height": 800},
+            viewport={"width": 1200, "height": 900},
             downloads_path=downloads_path,
             executable_path=chrome_exe,
             user_data_dir=user_data,
@@ -95,11 +95,14 @@ async def main():
             "Enter a term or phrase to get analysis, suggestions, difficulty, and more"
         ).fill(keyword)
         await page.get_by_role("button", name="analyze").click()
+        await page.get_by_role("link", name="Keyword Suggestions").click()
         async with page.expect_download() as download_info:
             await page.get_by_role("button", name="Export CSV").click()
         download = download_info.value
         download = await download
-        await download.save_as("/home/ubuntu/repos/moz/downloads/" + download.suggested_filename)
+        await download.save_as(
+            "/home/ubuntu/repos/moz/downloads/" + download.suggested_filename
+        )
         # -- END CODEGEN LINES --
 
         # When done, close the browser.
